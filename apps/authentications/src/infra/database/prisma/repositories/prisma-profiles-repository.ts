@@ -13,7 +13,7 @@ export class PrismaProfilesRepository implements ProfilesRepository {
     }
 
     return new Profile({
-      name: profile.title
+      name: profile.name
     }, profile.id);
   }
 }

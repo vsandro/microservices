@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/Authentications', async (request, response) => {
-  const { profileId, name, email } = request.body;
+  const { profileId, name, email, password } = request.body;
 
   const prismaUsersRepository = new PrismaUsersRepository();
   const prismaProfilesRepository = new PrismaProfilesRepository();
@@ -37,6 +37,7 @@ app.post('/Authentications', async (request, response) => {
     await AuthenticationProfileUseCase.execute({
       name,
       email,
+      password,
       profileId,
     })
 

@@ -22,6 +22,10 @@ export class User {
     return this.props.email;
   }
 
+  get password(): string {
+    return this.props.password;
+  }
+
   constructor(props: UserProps, id?: string) {
     this._id = id ?? crypto.randomUUID();
     this.props = props;

@@ -21,7 +21,7 @@ export class AuthenticationProfile {
     private messagingAdapter: MessagingAdapter,
   ) {}
 
-  async execute({ name, email, profileId }: AuthenticationProfileRequest): Promise<void> {
+  async execute({ name, email, password, profileId }: AuthenticationProfileRequest): Promise<void> {
     const profile = await this.ProfilesRepository.findById(profileId);
 
     const profileExists = !!profile;
